@@ -47,8 +47,8 @@
           <tr>
             <th class="titleCell">Title</th>
             <th>Size</th>
+            <th>Stock</th>
             <th>Id</th>
-            <th>Quantity</th>
             <th></th>
           </tr>
         </thead>
@@ -61,9 +61,8 @@
               >
             </td>
             <td><a class="tdTextLinkFormat" href="/size/<%= urlPath %>/<%= item.item_id %>"><%= item.size %></a></td>
-            <td class="tdItemId"><%= item.item_id %></td>
             <td><a  class="tdTextLinkFormat" href="/size/<%= urlPath %>/<%= item.item_id %>"><%= item.quantity %></a></td>
-            <!-- TODO: Add deleting feature -->
+            <td class="tdItemId"><%= item.item_id %></td>
             <td class="tdBtnRight">
                 <a href="/size/<%= urlPath %>/delete/<%= item.item_id %>/authorize-delete" class="tdBtnFormat" aria-label="Delete <%= item.title %> in size <%= item.size %>">
                     <svg

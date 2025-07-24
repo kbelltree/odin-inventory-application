@@ -135,7 +135,7 @@ header {
 }
 
 table {
-  table-layout: fixed;
+  /* table-layout: fixed; */
   border-collapse: collapse;
   width: 100%;
 }
@@ -290,6 +290,7 @@ footer a {
 
 .tdItemId {
   font-size: 0.75rem;
+  min-width: 0;
 }
 
 .tdBtnRight {
