@@ -64,7 +64,7 @@ async function createNewItemPost(req, res) {
     });
   }
   await db.insertNewItem(title, sizeId, quantity);
-  return res.redirect('/size/all');
+  return res.redirect('/size/All');
 }
 
 async function getItemsBySize(req, res) {
