@@ -1,0 +1,548 @@
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/roboto-v48-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/roboto-v48-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* raleway-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/raleway-v36-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --font-color: #12110f;
+  --main-color: #e5dfd3;
+  --button-color: #c4c2bd;
+  --alert-color: #c05748;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  color: var(--font-color);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  min-width: 320px;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.25em;
+}
+
+svg {
+  vertical-align: middle;
+  stroke: var(--font-color);
+}
+
+input {
+  appearance: none;
+  border: 1px solid var(--main-color);
+  border-radius: 8px;
+}
+
+select {
+  color: var(--font-color);
+  background-color: white;
+  appearance: none;
+  outline-offset: 1.5px;
+  border: none;
+  padding-left: 0.25em;
+  cursor: pointer;
+  width: 100%;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  color: var(--font-color);
+  border-radius: 50px;
+  display: inline-flex;
+  padding: 0.25em;
+  font-weight: 600;
+  transition: transform 0.1s ease-in;
+  cursor: pointer;
+}
+
+a:focus,
+a:active,
+button:focus,
+button:active {
+  background-color: var(--main-color);
+  transform: scale(0.95);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    background-color: var(--main-color);
+  }
+
+  button:hover {
+    background-color: var(--main-color);
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 0.5em 0;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--main-color);
+}
+
+thead {
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+tbody a {
+  padding: 0;
+}
+
+footer {
+  font-size: 0.75rem;
+  padding: 1.5em;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: underline;
+}
+
+.headerMenuContainer {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(var(--main-color), white);
+  z-index: 100;
+  height: 2.875em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 0.875rem;
+  display: inline-block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+.menuWrapper > ul {
+  display: flex;
+  gap: 1.5em;
+}
+
+.pageHeadingFormat {
+  position: sticky;
+  top: 1em;
+  background-color: white;
+  display: flex;
+  z-index: 99;
+}
+
+.sizesHeadingContainer,
+.formHeadingContainer {
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em 0;
+}
+
+.itemsHeadingContainer {
+  flex-direction: column;
+  gap: 0.75em;
+  padding: 2em 0;
+}
+
+.itemsHeading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itemFilterForm {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0.25em;
+}
+
+.itemFilterForm > label {
+  font-size: 0.75rem;
+}
+
+.btnAdd,
+.btnClose {
+  border-radius: 50px;
+}
+
+.btnAdd > svg,
+.btnClose > svg {
+  width: 1.75em;
+  height: auto;
+}
+
+.sizeList {
+  font-weight: 600;
+  overflow: auto;
+}
+
+.sizeList li {
+  padding: 1.375em;
+  border-bottom: 1px solid var(--main-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sizeSelect {
+  max-width: 30ch;
+  min-width: 15ch;
+  border: 1px solid var(--main-color);
+  border-radius: 8px;
+  padding: 0.25em;
+  position: relative;
+}
+
+.sizeSelect::after {
+  position: absolute;
+  right: 0.5em;
+  top: 40%;
+  content: '';
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--font-color);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  pointer-events: none;
+}
+
+.titleCell {
+  width: 40%;
+}
+
+.tdTextLinkFormat {
+  padding: 0.25em;
+}
+
+.tdItemId {
+  font-size: 0.75rem;
+}
+
+.tdBtnRight {
+  text-align: right;
+}
+
+.tdBtnFormat,
+.listBtnFormat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  padding: 0.25em;
+}
+
+.tdBtnFormat > svg {
+  width: 1.25em;
+  height: auto;
+}
+
+.listBtnFormat > svg {
+  width: 1.5em;
+  height: auto;
+}
+
+.formNewSize,
+.formNewItem,
+.formUpdateItem,
+.formPassword {
+  padding-top: 1.5em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  min-width: 250px;
+}
+
+.formNewSize > label,
+.formNewItem > label,
+.formUpdateItem > label,
+.formPassword > label {
+  font-size: 0.75rem;
+  padding-bottom: 0.5em;
+}
+
+.formPassword > label {
+  font-size: 1rem;
+}
+
+.formNewSize > input,
+.formNewItem > input,
+.formUpdateItem > input,
+.formPassword > input {
+  padding: 0.5em;
+}
+
+.formNewSize > button,
+.formNewItem > button,
+.formUpdateItem > button,
+.formPassword > button {
+  padding: 0.75em;
+  margin: 2.25em auto;
+  background-color: #e5dfd3;
+  display: inline-block;
+  width: 40%;
+}
+
+.formUpdateItem > button {
+  width: 50%;
+}
+
+.formPassword > button,
+.formPassword > a {
+  width: 60%;
+}
+
+.formPassword > a {
+  padding: 0.75em;
+  background-color: white;
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 50px;
+  text-align: center;
+  margin: auto;
+}
+
+.formNewItem > label:nth-of-type(n + 2),
+.formUpdateItem > label:nth-of-type(n + 2) {
+  padding-top: 0.75em;
+}
+
+.formNewItem select,
+.formUpdateItem select {
+  outline-offset: 5px;
+}
+
+.formNewItem .sizeSelect,
+.formUpdateItem .sizeSelect {
+  padding: 0.5em;
+}
+
+.quantityInput {
+  max-width: 30ch;
+  min-width: 15ch;
+}
+
+.formUpdateItem .passwordInput {
+  margin-top: 2em;
+}
+
+.alertText {
+  color: var(--alert-color);
+  text-align: center;
+  margin-top: 2em;
+}
+
+.errorPageContainer {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.errorPageContainer p {
+  font-size: 1.25em;
+}
+
+.errorPageContainer a {
+  display: inline-block;
+  margin-top: 2em;
+  padding: 0.25em 0.5em;
+  background-color: var(--main-color);
+  border-radius: 50px;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .container {
+    width: 80%;
+    max-width: 1200px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  thead {
+    font-size: 1rem;
+  }
+
+  tbody {
+    font-size: 1.25rem;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
+
+  .container {
+    max-width: 1200px;
+  }
+
+  .headerMenuContainer {
+    height: 4.5em;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .navLinks a {
+    font-size: 1.5em;
+  }
+
+  .sizesHeadingContainer,
+  .itemsHeadingContainer,
+  .formHeadingContainer {
+    padding-bottom: 4em 0;
+  }
+
+  .btnAdd > svg,
+  .btnClose > svg {
+    width: 2.25em;
+    height: auto;
+  }
+
+  .sizesContainer {
+    width: 50%;
+  }
+
+  .sizeList {
+    margin-top: 3em;
+  }
+
+  .sizeListText {
+    font-size: 1.75em;
+    font-weight: 400;
+  }
+
+  .listBtnFormat > svg {
+    width: 2em;
+    height: auto;
+  }
+
+  .itemsHeadingContainer {
+    gap: 1.25em;
+  }
+
+  .itemFilterForm > label {
+    font-size: 1rem;
+  }
+
+  .itemFilterSelect {
+    font-size: 1.125rem;
+  }
+
+  .tdItemId {
+    font-size: 1rem;
+  }
+
+  .formPageContainer {
+    width: 50%;
+  }
+
+  .formNewSize > label,
+  .formNewItem > label,
+  .formUpdateItem > label {
+    font-size: 1rem;
+  }
+
+  .formPassword > label {
+    font-size: 1.5rem;
+  }
+
+  .formNewSize > input,
+  .formNewItem > input,
+  .formNewItem .sizeSelect,
+  .formUpdateItem > input,
+  .formUpdateItem .sizeSelect,
+  .formPassword > input {
+    font-size: 1.125rem;
+  }
+
+  .formNewSize > button,
+  .formNewItem > button {
+    width: 30%;
+    font-size: 1.25rem;
+  }
+
+  .formPassword > button,
+  .formPassword > a {
+    font-size: 1.25rem;
+  }
+
+  .alertText {
+    margin-top: 4em;
+  }
+}

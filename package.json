@@ -1,0 +1,31 @@
+{
+  "name": "odin-inventory-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "seed": "node db/seed.js",
+    "start": "node --watch app.js",
+    "format": "prettier --write .",
+    "lint": "eslint --fix ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-async-handler": "^1.2.0",
+    "express-validator": "^7.2.1",
+    "method-override": "^3.0.0",
+    "pg": "^8.16.2"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "eslint": "^9.29.0",
+    "eslint-plugin-prettier": "^5.5.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-ejs": "^1.0.3"
+  }
+}

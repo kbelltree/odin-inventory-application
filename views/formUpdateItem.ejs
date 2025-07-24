@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head'); %>
+  <body>
+    <%- include('partials/header') %>
+    <main class="container formPageContainer">
+      <div class="pageHeadingFormat formHeadingContainer">
+        <h2><%= item.title %></h2>
+        <a class="btnClose" href="<%= `/size/${urlPath}` %>" aria-label="Close the form">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x-circle"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="15" y1="9" x2="9" y2="15"></line>
+            <line x1="9" y1="9" x2="15" y2="15"></line>
+          </svg>
+        </a>
+        </div>
+        <div class="alertText">
+            <p><%= message %></p>
+            <%- include('partials/validationErrors') %>
+        </div>
+        <form class="formUpdateItem"
+          method="POST"
+          action="<%=`/size/${urlPath}/edit/${item.id}?_method=PATCH`%>"
+        >
+          <label for="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value="<%=item.title%>"
+          required />
+          <label for="size">Size</label>
+          <div class="sizeSelect">
+            <select name="sizeId" id="size">
+              <% sizes.forEach(size => { %>
+                <% if (size.size
+                !== 'all') { %>
+                <option value="<%= size.id %>" <%= item.size_id === size.id ? 'selected' : '' %>><%= size.size %></option>
+                <% } %>
+              <% }) %>
+            </select>
+          </div>
+          <label for="quantity">Quantity</label>
+          <input class="quantityInput"
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="0"
+            max="50"
+            value="<%= item.quantity %>"
+          required />
+          <label class="passwordInput" for="updateItemPW">Enter password to update the item details
+          </label>
+          <input type="password" id="updateItemPW" name="adminPW" required />
+          <button type="submit">Update Item</button>
+        </form>
+      
+    </main>
+  </body>
+</html>
